@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohan Soft Tech - Technology Solutions Company</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+        
+        .animate-fade-in-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .opacity-0 {
+            opacity: 0;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom gradient */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Touch-friendly interactions */
+        @media (hover: none) and (pointer: coarse) {
+            .service-card:hover {
+                transform: none;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            
+            .service-card:active {
+                transform: scale(0.98);
+            }
+        }
+        
+        /* Parallax effect */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-transparent z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-blue-600">
+                        <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            Sohan Soft Tech
+                        </span>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-cyan-300 transition-colors duration-300">Home</a>
+                    <a href="#about" class="text-white hover:text-cyan-300 transition-colors duration-300">About</a>
+                    <a href="#services" class="text-white hover:text-cyan-300 transition-colors duration-300">Services</a>
+                    <a href="#contact" class="text-white hover:text-cyan-300 transition-colors duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-sm border-t transition-all duration-300 ease-in-out">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" onclick="closeMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">Home</a>
+                <a href="#about" onclick="closeMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">About</a>
+                <a href="#services" onclick="closeMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">Services</a>
+                <a href="#contact" onclick="closeMobileMenu()" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://ik.imagekit.io/3a6ahdued/Black%20and%20Purple%20Futuristic%20Digital%20Technology%20Banner%20Landscape.png?updatedAt=')"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-20">
+            <div class="opacity-0 animate-fade-in-up bg-black/30 backdrop-blur-sm rounded-3xl p-6 md:p-12" style="animation-delay: 0.2s;">
+                <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 md:mb-6 drop-shadow-2xl">
+                    Technology Solutions
+                    <span class="block text-cyan-300 mt-1 md:mt-2">That Drive Success</span>
+                </h1>
+                <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 mb-8 md:mb-10 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
+                    Empowering businesses with cutting-edge IT solutions, innovative web development, and digital transformation services.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
+                    <button onclick="scrollToSection('contact')" class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-bold hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-2xl text-base sm:text-lg w-full sm:w-auto sm:min-w-[200px]">
+                        Get Started
+                    </button>
+                    <button onclick="scrollToSection('about')" class="border-2 border-white bg-white/10 backdrop-blur-sm text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full font-bold hover:bg-white hover:text-gray-900 transform hover:scale-105 transition-all duration-300 shadow-2xl text-base sm:text-lg w-full sm:w-auto sm:min-w-[200px]">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 animate-float" style="animation-delay: 0s;">
+            <div class="w-20 h-20 bg-white/10 rounded-full"></div>
+        </div>
+        <div class="absolute bottom-20 right-10 animate-float" style="animation-delay: 1s;">
+            <div class="w-16 h-16 bg-white/10 rounded-full"></div>
+        </div>
+        <div class="absolute top-1/2 right-20 animate-float" style="animation-delay: 2s;">
+            <div class="w-12 h-12 bg-white/10 rounded-full"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white relative z-20 -mt-32 rounded-t-3xl shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 opacity-0 fade-in-element">About Sohan Soft Tech</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto opacity-0 fade-in-element font-semibold" style="animation-delay: 0.2s;">
+                    Your trusted IT partner for comprehensive technology solutions
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="opacity-0 fade-in-element" style="animation-delay: 0.4s;">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-6">Driving Digital Transformation</h3>
+                    <p class="text-lg text-gray-800 mb-6 font-medium">
+                        At Sohan Soft Tech, we specialize in delivering innovative technology solutions that help businesses thrive in the digital age. With years of experience and a team of skilled professionals, we provide end-to-end IT services tailored to your unique needs.
+                    </p>
+                    <p class="text-lg text-gray-800 mb-8 font-medium">
+                        From web development and mobile applications to digital marketing and business automation, we're committed to helping you achieve your goals with cutting-edge technology and exceptional service.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">100+</div>
+                            <div class="text-gray-800 font-semibold">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">50+</div>
+                            <div class="text-gray-800 font-semibold">Happy Clients</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="opacity-0 fade-in-element" style="animation-delay: 0.6s;">
+                    <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h4 class="text-2xl font-bold mb-4">Our Mission</h4>
+                            <p class="text-blue-100">
+                                To empower businesses with innovative technology solutions that drive growth, efficiency, and success in the digital landscape.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 opacity-0 fade-in-element">Our Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto opacity-0 fade-in-element" style="animation-delay: 0.2s;">
+                    Comprehensive technology solutions to accelerate your business growth
+                </p>
+            </div>
+
+            <!-- Web Solutions -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 opacity-0 fade-in-element">Web Solutions</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">Custom Web Development</h4>
+                        <p class="text-gray-600">Responsive, scalable websites built with modern technologies and best practices.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
+                        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">UI/UX Design</h4>
+                        <p class="text-gray-600">Beautiful, user-friendly interfaces that enhance user experience and engagement.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.6s;">
+                        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">Web Applications</h4>
+                        <p class="text-gray-600">Powerful web applications tailored to your business processes and requirements.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-commerce Services -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 opacity-0 fade-in-element">E-commerce Services</h3>
+                <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
+                        <div class="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">Online Store Development</h4>
+                        <p class="text-gray-600">Complete e-commerce solutions with secure payment gateways and inventory management.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
+                        <div class="w-16 h-16 bg-red-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">E-commerce Optimization</h4>
+                        <p class="text-gray-600">Performance optimization and conversion rate improvement for existing online stores.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile App Development -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 opacity-0 fade-in-element">Mobile App Development</h3>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
+                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 011 1v11a1 1 0 01-1 1H5a1 1 0 01-1-1V7zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 000-2H9z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">iOS Development</h4>
+                        <p class="text-gray-600">Native iOS applications with seamless performance and intuitive user experience.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
+                        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 011 1v11a1 1 0 01-1 1H5a1 1 0 01-1-1V7zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 000-2H9z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">Android Development</h4>
+                        <p class="text-gray-600">Custom Android applications optimized for performance and user engagement.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.6s;">
+                        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 011 1v11a1 1 0 01-1 1H5a1 1 0 01-1-1V7zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 000-2H9z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-4">Cross-Platform Apps</h4>
+                        <p class="text-gray-600">Efficient cross-platform solutions that work seamlessly across all devices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Digital Services -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 opacity-0 fade-in-element">Digital Services</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">SEO Services</h4>
+                        <p class="text-gray-600 text-sm">Boost your search rankings and online visibility.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
+                        <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"></path>
+                                <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Digital Marketing</h4>
+                        <p class="text-gray-600 text-sm">Comprehensive marketing strategies for growth.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.6s;">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Social Media</h4>
+                        <p class="text-gray-600 text-sm">Engage your audience across all platforms.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.8s;">
+                        <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Branding</h4>
+                        <p class="text-gray-600 text-sm">Create a memorable brand identity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business IT Solutions -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 opacity-0 fade-in-element">Business IT Solutions</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Cloud Solutions</h4>
+                        <p class="text-gray-600 text-sm">Scalable cloud infrastructure and migration services.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.477.859h4z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Automation</h4>
+                        <p class="text-gray-600 text-sm">Streamline processes with intelligent automation.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.6s;">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">Security</h4>
+                        <p class="text-gray-600 text-sm">Comprehensive cybersecurity solutions.</p>
+                    </div>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.8s;">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 mb-3">IT Consulting</h4>
+                        <p class="text-gray-600 text-sm">Strategic technology guidance and planning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 opacity-0 fade-in-element">Why Choose Sohan Soft Tech?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto opacity-0 fade-in-element" style="animation-delay: 0.2s;">
+                    We deliver exceptional results through expertise, innovation, and dedication
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center opacity-0 fade-in-element" style="animation-delay: 0.2s;">
+                    <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Proven Reliability</h3>
+                    <p class="text-gray-600">Consistent delivery of high-quality solutions with 99.9% uptime guarantee and 24/7 support.</p>
+                </div>
+                <div class="text-center opacity-0 fade-in-element" style="animation-delay: 0.4s;">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Expert Team</h3>
+                    <p class="text-gray-600">Skilled professionals with years of experience in cutting-edge technologies and industry best practices.</p>
+                </div>
+                <div class="text-center opacity-0 fade-in-element" style="animation-delay: 0.6s;">
+                    <div class="w-20 h-20 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Cost-Effective Solutions</h3>
+                    <p class="text-gray-600">Competitive pricing without compromising quality, delivering maximum ROI for your investment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 opacity-0 fade-in-element">Get In Touch</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto opacity-0 fade-in-element" style="animation-delay: 0.2s;">
+                    Ready to transform your business with technology? Let's discuss your project
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                <div class="opacity-0 fade-in-element" style="animation-delay: 0.4s;">
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Email</div>
+                                <div class="text-gray-600">info@sohansofttech.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Phone</div>
+                                <div class="text-gray-600">+1 (555) 123-4567</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Address</div>
+                                <div class="text-gray-600">123 Tech Street, Digital City, TC 12345</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transform hover:scale-105 transition-all duration-300">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+                            </svg>
+                            WhatsApp Us
+                        </a>
+                    </div>
+                </div>
+                <div class="opacity-0 fade-in-element" style="animation-delay: 0.6s;">
+                    <form class="bg-white rounded-xl shadow-lg p-6 md:p-8" onsubmit="handleFormSubmit(event)">
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                                <input type="text" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" placeholder="Your Name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" placeholder="your@email.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Service Interested In</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300">
+                                    <option>Web Development</option>
+                                    <option>Mobile App Development</option>
+                                    <option>E-commerce Solutions</option>
+                                    <option>Digital Marketing</option>
+                                    <option>Cloud Solutions</option>
+                                    <option>IT Consulting</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                                <textarea rows="4" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300" placeholder="Tell us about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transform hover:scale-105 transition-all duration-300">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                            Sohan Soft Tech
+                        </span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        Empowering businesses with innovative technology solutions and exceptional service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300">Web Development</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300">Mobile Apps</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300">E-commerce</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300">Digital Marketing</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors duration-300">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors duration-300">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Sohan Soft Tech. All rights reserved. Built with ❤️ for your success.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.add('hidden');
+        }
+
+        // Smooth scrolling to sections
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const name = formData.get('name') || event.target.querySelector('input[type="text"]').value;
+            const email = formData.get('email') || event.target.querySelector('input[type="email"]').value;
+            const service = event.target.querySelector('select').value;
+            const message = event.target.querySelector('textarea').value;
+            
+            // Show success message
+            alert(`Thank you ${name}! Your message has been received. We'll get back to you within 24 hours regarding ${service}.`);
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                    entry.target.classList.remove('opacity-0');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in-element');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('nav');
+            const navLinks = navbar.querySelectorAll('a, button');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white/95', 'backdrop-blur-sm', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+                // Change text colors to dark when scrolled
+                navLinks.forEach(link => {
+                    if (link.tagName === 'A') {
+                        link.classList.remove('text-white', 'hover:text-cyan-300');
+                        link.classList.add('text-gray-700', 'hover:text-blue-600');
+                    } else if (link.tagName === 'BUTTON') {
+                        link.classList.remove('text-white');
+                        link.classList.add('text-gray-700');
+                    }
+                });
+            } else {
+                navbar.classList.remove('bg-white/95', 'backdrop-blur-sm', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
+                // Change text colors to white when at top
+                navLinks.forEach(link => {
+                    if (link.tagName === 'A') {
+                        link.classList.remove('text-gray-700', 'hover:text-blue-600');
+                        link.classList.add('text-white', 'hover:text-cyan-300');
+                    } else if (link.tagName === 'BUTTON') {
+                        link.classList.remove('text-gray-700');
+                        link.classList.add('text-white');
+                    }
+                });
+            }
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('#home');
+            const speed = scrolled * 0.5;
+            if (parallax) {
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9879faabf62c860e',t:'MTc1OTMwMDkzOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
