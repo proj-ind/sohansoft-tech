@@ -22,6 +22,26 @@
             }
         }
         
+        /* GIF animation control */
+        .gif-container {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gif-container img {
+            animation: playTwice 6s ease-in-out;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes playTwice {
+            0% { opacity: 1; }
+            33.33% { opacity: 1; }
+            33.34% { opacity: 1; }
+            66.66% { opacity: 1; }
+            66.67% { opacity: 1; }
+            100% { opacity: 1; }
+        }
+        
         @keyframes fadeInLeft {
             from {
                 opacity: 0;
@@ -212,7 +232,7 @@
                 <div class="opacity-0 fade-in-element" style="animation-delay: 0.6s;">
                     <div class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl p-8 text-white text-center">
                         <!-- Mission GIF placeholder -->
-                        <div class="w-full mb-6 rounded-lg overflow-hidden">
+                        <div class="w-full mb-6 rounded-lg overflow-hidden gif-container">
                             <img src="https://ik.imagekit.io/3a6ahdued/misison.gif?updatedAt=" alt="Our Mission" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Mission Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-48 bg-white/20 rounded-lg flex items-center justify-center" style="display: none;">
                                 <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
@@ -245,7 +265,7 @@
                 <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 opacity-0 fade-in-element">Web Solutions</h3>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
-                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden">
+                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden gif-container">
                             <img src="https://ik.imagekit.io/3a6ahdued/Custom%20web%20development.gif?updatedAt=" alt="Custom Web Development" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Custom Web Development Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-32 bg-blue-100 rounded-lg flex items-center justify-center" style="display: none;">
                                 <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -257,8 +277,8 @@
                         <p class="text-gray-600">Responsive, scalable websites built with modern technologies and best practices.</p>
                     </div>
                     <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
-                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden">
-                            <img src="https://ik.imagekit.io/3a6ahdued/uiux%20(1).gif?updatedAt=" alt="UI/UX Design" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='UI/UX Design Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden gif-container">
+                            <img src="https://ik.imagekit.io/3a6ahdued/uiux%20(2).gif?updatedAt=" alt="UI/UX Design" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='UI/UX Design Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-32 bg-green-100 rounded-lg flex items-center justify-center" style="display: none;">
                                 <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
                                     <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
@@ -269,7 +289,7 @@
                         <p class="text-gray-600">Beautiful, user-friendly interfaces that enhance user experience and engagement.</p>
                     </div>
                     <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.6s;">
-                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden">
+                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden gif-container">
                             <img src="https://ik.imagekit.io/3a6ahdued/Web%20Applications.gif?updatedAt=" alt="Web Applications" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Web Applications Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-32 bg-purple-100 rounded-lg flex items-center justify-center" style="display: none;">
                                 <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
@@ -289,7 +309,7 @@
                 <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
                         <!-- Online Store GIF placeholder -->
-                        <div class="w-full mb-6 rounded-lg overflow-hidden">
+                        <div class="w-full mb-6 rounded-lg overflow-hidden gif-container">
                             <img src="https://ik.imagekit.io/3a6ahdued/Black%20and%20Blue%20Modern%20Website%20Design%20Facebook%20Post.gif?updatedAt=" alt="Online Store Development" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Online Store Development Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-32 bg-orange-100 rounded-lg flex items-center justify-center" style="display: none;">
                                 <svg class="w-8 h-8 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
@@ -302,7 +322,7 @@
                     </div>
                     <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
                         <!-- E-commerce Optimization GIF placeholder -->
-                        <div class="w-full mb-6 rounded-lg overflow-hidden">
+                        <div class="w-full mb-6 rounded-lg overflow-hidden gif-container">
                             <img src="https://ik.imagekit.io/3a6ahdued/Purple%20Pink%20And%20Yellow%20Illustrative%20E-commerce%20Optimization%20Presentation.gif?updatedAt=" alt="E-commerce Optimization" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='E-commerce Optimization Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-32 bg-red-100 rounded-lg flex items-center justify-center" style="display: none;">
                                 <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
@@ -322,7 +342,7 @@
                 <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 opacity-0 fade-in-element">Mobile App Development</h3>
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
-                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden">
+                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden gif-container">
                             <img src="https://ik.imagekit.io/3a6ahdued/IOS%20APP%20DEVELOPMENT.gif?updatedAt=" alt="iOS Development" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='iOS Development Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-32 bg-blue-100 rounded-lg flex items-center justify-center" style="display: none;">
                                 <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
@@ -334,7 +354,7 @@
                         <p class="text-gray-600">Native iOS applications with seamless performance and intuitive user experience.</p>
                     </div>
                     <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
-                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden">
+                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden gif-container">
                             <img src="https://ik.imagekit.io/3a6ahdued/Presentation%20-%20Create%20Me%20An%20Android%20App%20(2).gif?updatedAt=" alt="Android Development" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Android Development Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-32 bg-green-100 rounded-lg flex items-center justify-center" style="display: none;">
                                 <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -346,7 +366,7 @@
                         <p class="text-gray-600">Custom Android applications optimized for performance and user engagement.</p>
                     </div>
                     <div class="service-card bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.6s;">
-                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden">
+                        <div class="w-full h-auto mb-6 rounded-lg overflow-hidden gif-container">
                             <img src="https://ik.imagekit.io/3a6ahdued/YouTube%20Banner%20-%20Cross-Platform%20Apps%20Development%20Made%20Easy%20(2).gif?updatedAt=" alt="Cross-Platform Apps" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Cross-Platform Apps Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
                             <div class="w-full h-32 bg-purple-100 rounded-lg flex items-center justify-center" style="display: none;">
                                 <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
@@ -365,38 +385,50 @@
                 <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 opacity-0 fade-in-element">Digital Services</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                     <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
-                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                            </svg>
+                        <div class="w-full h-auto mb-4 rounded-lg overflow-hidden gif-container">
+                            <img src="https://ik.imagekit.io/3a6ahdued/Blue%20White%20Modern%20SEO%20Services%20Instagram%20Post.gif?updatedAt=" alt="SEO Services" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='SEO Services Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-24 bg-yellow-100 rounded-lg flex items-center justify-center" style="display: none;">
+                                <svg class="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-3">SEO Services</h4>
                         <p class="text-gray-600 text-sm">Boost your search rankings and online visibility.</p>
                     </div>
                     <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
-                        <div class="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"></path>
-                                <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"></path>
-                            </svg>
+                        <div class="w-full h-auto mb-4 rounded-lg overflow-hidden gif-container">
+                            <img src="https://ik.imagekit.io/3a6ahdued/Dark%20Blue%20and%20Green%20Modern%20Digital%20Marketing%20Services%20Agency%20Instagram%20Post.gif?updatedAt=" alt="Digital Marketing" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Digital Marketing Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-24 bg-pink-100 rounded-lg flex items-center justify-center" style="display: none;">
+                                <svg class="w-6 h-6 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"></path>
+                                    <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-3">Digital Marketing</h4>
                         <p class="text-gray-600 text-sm">Comprehensive marketing strategies for growth.</p>
                     </div>
                     <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.6s;">
-                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
-                            </svg>
+                        <div class="w-full h-auto mb-4 rounded-lg overflow-hidden gif-container">
+                            <img src="https://ik.imagekit.io/3a6ahdued/Black%20White%20Bold%203D%20Social%20Media%20Report%20Presentation%20(1).gif?updatedAt=" alt="Social Media" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Social Media Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-24 bg-indigo-100 rounded-lg flex items-center justify-center" style="display: none;">
+                                <svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-3">Social Media</h4>
                         <p class="text-gray-600 text-sm">Engage your audience across all platforms.</p>
                     </div>
                     <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.8s;">
-                        <div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
-                            </svg>
+                        <div class="w-full h-auto mb-4 rounded-lg overflow-hidden gif-container">
+                            <img src="https://ik.imagekit.io/3a6ahdued/Pastel%20Personal%20Branding%20Guide%20Carousel%20Instagram%20Post.gif?updatedAt=" alt="Branding" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Branding Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-24 bg-teal-100 rounded-lg flex items-center justify-center" style="display: none;">
+                                <svg class="w-6 h-6 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-3">Branding</h4>
                         <p class="text-gray-600 text-sm">Create a memorable brand identity.</p>
@@ -409,38 +441,50 @@
                 <h3 class="text-3xl font-bold text-center text-gray-900 mb-12 opacity-0 fade-in-element">Business IT Solutions</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                     <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.2s;">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
-                            </svg>
+                        <div class="w-full h-auto mb-4 rounded-lg overflow-hidden gif-container">
+                            <img src="https://ik.imagekit.io/3a6ahdued/Blue%20Modern%20Cloud%20Computing%20Solutions%20Instagram%20Post.gif?updatedAt=" alt="Cloud Solutions" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Cloud Solutions Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-24 bg-blue-100 rounded-lg flex items-center justify-center" style="display: none;">
+                                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-3">Cloud Solutions</h4>
                         <p class="text-gray-600 text-sm">Scalable cloud infrastructure and migration services.</p>
                     </div>
-                    <div class="service-card bg-white rounded-xl shadow-lg p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.477.859h4z"></path>
-                            </svg>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.4s;">
+                        <div class="w-full h-auto mb-4 rounded-lg overflow-hidden gif-container">
+                            <img src="https://ik.imagekit.io/3a6ahdued/Pink%20and%20Blue%20Illustrative%20Business%20Automation%20Software%20Instagram%20Post.gif?updatedAt=" alt="Automation" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Automation Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-24 bg-green-100 rounded-lg flex items-center justify-center" style="display: none;">
+                                <svg class="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.477.859h4z"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-3">Automation</h4>
                         <p class="text-gray-600 text-sm">Streamline processes with intelligent automation.</p>
                     </div>
-                    <div class="service-card bg-white rounded-xl shadow-lg p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.6s;">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.6s;">
+                        <div class="w-full h-auto mb-4 rounded-lg overflow-hidden gif-container">
+                            <img src="https://ik.imagekit.io/3a6ahdued/Black%20and%20White%20Futuristic%20Cyber%20Security%20Video.gif?updatedAt=" alt="Security" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='Security Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-24 bg-red-100 rounded-lg flex items-center justify-center" style="display: none;">
+                                <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-3">Security</h4>
                         <p class="text-gray-600 text-sm">Comprehensive cybersecurity solutions.</p>
                     </div>
-                    <div class="service-card bg-white rounded-xl shadow-lg p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.8s;">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
-                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
-                            </svg>
+                    <div class="service-card bg-white rounded-xl shadow-lg p-4 md:p-6 border border-gray-100 opacity-0 fade-in-element" style="animation-delay: 0.8s;">
+                        <div class="w-full h-auto mb-4 rounded-lg overflow-hidden gif-container">
+                            <img src="https://ik.imagekit.io/3a6ahdued/Blue%20And%20White%20Modern%20It%20Consulting%20Instagram%20Post.gif?updatedAt=" alt="IT Consulting" class="w-full h-auto object-contain" onerror="this.src=''; this.alt='IT Consulting Image'; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="w-full h-24 bg-purple-100 rounded-lg flex items-center justify-center" style="display: none;">
+                                <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 2a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
                         </div>
                         <h4 class="text-lg font-bold text-gray-900 mb-3">IT Consulting</h4>
                         <p class="text-gray-600 text-sm">Strategic technology guidance and planning.</p>
@@ -1388,5 +1432,5 @@
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'987ad36480f8860e',t:'MTc1OTMwOTgxNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'987c740e91c4860e',t:'MTc1OTMyNjg4MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
